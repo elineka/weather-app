@@ -1,12 +1,14 @@
 * {
     box-sizing: border-box;
-  }
-main {
     margin: 0;
     padding: 0;
-    width: 50%;
+  }
+main {
+    max-width: 50%;
     margin: 50px auto;
     text-align: center;
+   
 }
+
 
 
