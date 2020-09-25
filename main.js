@@ -1,6 +1,5 @@
 
 
-
 let mySearch = document.getElementById('search');
  let myButton = document.getElementById('searchbtn');
  let myParagraph = document.getElementById('print');
@@ -10,7 +9,9 @@ myButton.addEventListener('click', function () {
     .then(response => response.json())
     .then(data =>{ localStorage.setItem('datat', JSON.stringify(data))
      console.log(data)
-     
+     if (!data) {
+      console.log(error)
+    } else {
 document.getElementById('name').textContent = data.name;
 document.getElementById('country').textContent = data.sys.country;
 
@@ -26,13 +27,26 @@ document.getElementById('long').textContent = 'Longitude:'+" " + data.coord.lon 
 
 
 
-    })
+     } })
     .catch((error) => {
       console.log(error)
+      document.getElementById('name').textContent = "City/Country not exist";
+document.getElementById('country').textContent = "empty";
+
+document.getElementById('temp').textContent = "empty";
+
+//let date =new Date(data.dt*1000);
+//let options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric' };
+//let newDate = date.toLocaleString('en-US', options);
+
+document.getElementById('time').textContent =  "empty";
+document.getElementById('lati').textContent = "empty";
+document.getElementById('long').textContent = "empty";
      
   })
  
   });
+  
   
 
 window.onload = function() {
