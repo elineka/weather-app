@@ -52,7 +52,7 @@ document.getElementById('lati').textContent = 'Latitude:' +" " + data.coord.lat 
 document.getElementById('long').textContent = 'Longitude:'+" " + data.coord.lon +'\u00B0';
 
   } 
- 
+  
 }
 
   
